@@ -1,4 +1,4 @@
-Section 1: Software and Platforms Used**
+**Section 1: Software and Platforms Used**
 
 ### **Primary Software**
 
