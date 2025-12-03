@@ -1,4 +1,4 @@
-**Section 1: Software and Platforms Used**
+**Software and Platforms Used**
 
 ### **Primary Software**
 
@@ -55,7 +55,14 @@ TeslaDS/
 └── MIP2.pdf
 ```
 
----
+# **License**
+
+All financial data used in this project was obtained from Yahoo Finance. Yahoo Finance data is subject to
+their Terms of Use and is provided for personal, educational, and non-commercial purposes only.
+Redistribution, commercial use, or incorporation into commercial tools is prohibited without a proper
+subscription (e.g., Yahoo Finance Select). This project uses Yahoo Finance data strictly for academic
+analysis as part of a university course requirement. Users must comply with all applicable Yahoo Finance
+terms and licensing restrictions.
 
 #  **Instructions for Reproducing the Results**
 
