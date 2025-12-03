@@ -29,9 +29,8 @@ Analysis was conducted on both:
 * **macOS (Sonoma)**
   to ensure cross-platform reproducibility.
 
----
 
-# 📁 **Project Structure**
+# **Project Structure**
 
 ```
 TeslaDS/
@@ -58,11 +57,10 @@ TeslaDS/
 
 ---
 
-# 🔁 **Instructions for Reproducing the Results**
+#  **Instructions for Reproducing the Results**
 
 Follow these steps to regenerate the figures saved in the `Output/` directory using the data in `Data/` and the notebooks in `Scripts/`.
 
----
 
 ## **0) Prerequisites**
 
@@ -73,7 +71,6 @@ You will need:
 * (Optional) A clean **virtual environment**
 * No web scraping is required — all needed files are already in `Data/`.
 
----
 
 ## **1) Clone the Repository**
 
@@ -100,7 +97,6 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
----
 
 ## **3) Install Dependencies**
 
@@ -116,7 +112,6 @@ Otherwise, install the minimum required packages:
 pip install pandas matplotlib seaborn beautifulsoup4 lxml requests jupyter
 ```
 
----
 
 ## **4) Verify Project Structure**
 
@@ -128,7 +123,6 @@ Data/   Scripts/   Output/   LICENSE.md   README.md
 
 Ensure that `Data/elon_musk_timeline.csv` exists.
 
----
 
 ## **5) Run the Analysis Notebook**
 
@@ -166,7 +160,6 @@ This runs the notebook headlessly and saves an executed copy in `Output/`.
 2. Ensure the working directory includes the `Data/` folder.
 3. Run all cells normally.
 
----
 
 ## **6) Expected Outputs**
 
@@ -179,7 +172,6 @@ If the analysis runs successfully, `Output/` will contain:
 
 Existing files will be overwritten.
 
----
 
 ## **7) Re-Running From a Clean Slate (optional)**
 
@@ -195,7 +187,6 @@ rm -f Output/*.png Output/elon_tesla_modeling.ipynb
 Remove-Item Output\*.png, Output\elon_tesla_modeling.ipynb -ErrorAction Ignore
 ```
 
----
 
 ## **8) Troubleshooting Guide**
 
