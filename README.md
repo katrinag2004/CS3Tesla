@@ -1,61 +1,68 @@
-**Software and Platforms Used**
 
-### **Primary Software**
+# **TeslaDS: Time-Series Modeling of Tesla Stock & Elon Musk Event Timeline**
 
-This project was implemented entirely in **Python**, using both **Jupyter Notebook** and **Google Colab** environments for development, analysis, and visualization.
+Case study GitHub repository
 
-### **Required Python Packages**
+## **Contents**
 
-The following libraries were used for data manipulation, time-series modeling, visualization, and pulling historical stock prices:
-
-```python
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-from statsmodels.tsa.stattools import adfuller
-from statsmodels.tsa.arima.model import ARIMA
-from pmdarima import auto_arima
-from matplotlib.dates import DateFormatter
-from matplotlib.patches import Patch
-import yfinance as yf
-```
-
-### **Operating Systems**
-
-Analysis was conducted on both:
-
-* **Windows 11**
-* **macOS (Sonoma)**
-  to ensure cross-platform reproducibility.
+This project analyzes the relationship between **Tesla’s historical stock price movements** and **major events involving Elon Musk**, using time-series modeling, ARIMA forecasting, and event visualization. All analysis was conducted using Python, and figures were generated directly from the CSV data included in this repository.
 
 
-# **Project Structure**
+## **Software and Platform**
 
-```
-TeslaDS/
-│
-├── Data/
-│   ├── METADATA.md
-│   ├── elon_musk_timeline.csv
-│
-├── Scripts/
-│   ├── arima.ipynb
-│   ├── elon_tesla_modeling.ipynb
-│   ├── musktimeline.ipynb
-│   └── elon_tesla_modeling.ipynb
-│
-├── Output/
-│   ├── TSLAEvent.png
-│   ├── teslastockelon.png
-│   ├── teslastock.png
-│
-├── LICENSE.md
-├── README.md
-└── MIP2.pdf
-```
+This project was run using **Python** in both **Google Colab** and **Jupyter Notebook** environments.
 
-# **License**
+### **Primary Packages Used**
+
+The following Python libraries were used for data processing, statistical modeling, and visualization:
+
+* `pandas`
+* `numpy`
+* `matplotlib.pyplot`
+* `seaborn`
+* `yfinance`
+* `statsmodels` (ADF test, ARIMA modeling)
+* `pmdarima`
+* `matplotlib.dates` & `matplotlib.patches`
+
+All plots and ARIMA models were generated directly from the included CSV files.
+The analysis was executed on **both macOS and Windows** machines.
+
+
+## **Map**
+
+### **DATA Folder**
+
+* **elon_musk_timeline.csv**
+  Contains manually curated timestamps of Musk-related events used to overlay on Tesla stock price movements.
+
+* **METADATA.md**
+  Details the structure and origin of all datasets used in the project.
+  
+
+### **SCRIPTS Folder**
+
+* **arima.ipynb**
+  Notebook containing ARIMA and auto-ARIMA modeling for Tesla time-series data.
+
+* **elon_tesla_modeling.ipynb**
+  Notebook used to merge event timelines with price history and generate final event-aligned figures.
+
+* **musktimeline.ipynb**
+  Notebook focused on processing, cleaning, and analyzing the Elon Musk event dataset.
+
+### **Output Folder**
+
+Generated visualizations, including:
+
+* `teslastock.png` — Tesla closing price over time
+* `teslastockelon.png` — Tesla stock overlaid with Elon Musk event markers
+* `TSLAEvent.png` — Event-annotated timeline visualization
+
+These plots are overwritten each time the notebooks are run.
+
+
+### **LICENSE**
 
 All financial data used in this project was obtained from Yahoo Finance. Yahoo Finance data is subject to
 their Terms of Use and is provided for personal, educational, and non-commercial purposes only.
@@ -64,145 +71,50 @@ subscription (e.g., Yahoo Finance Select). This project uses Yahoo Finance data 
 analysis as part of a university course requirement. Users must comply with all applicable Yahoo Finance
 terms and licensing restrictions.
 
-#  **Instructions for Reproducing the Results**
 
-Follow these steps to regenerate the figures saved in the `Output/` directory using the data in `Data/` and the notebooks in `Scripts/`.
+## **Reproducing Results**
 
+To reproduce all figures and analyses in the `Output/` folder, follow the steps below.
 
-## **0) Prerequisites**
-
-You will need:
-
-* **Python 3.9+**
-* **Git**
-* (Optional) A clean **virtual environment**
-* No web scraping is required — all needed files are already in `Data/`.
-
-
-## **1) Clone the Repository**
+### **1. Download or Clone the Repository**
 
 ```bash
 git clone https://github.com/<your-username>/TeslaDS.git
 cd TeslaDS
 ```
 
----
+### **2. Ensure Data Availability**
 
-## **2) Create & Activate a Virtual Environment**
+All required CSV files are already provided in the `Data/` folder.
+No scraping or external API calls are required beyond optional use of `yfinance`.
 
-**macOS / Linux:**
+### **3. Run the Analysis Scripts**
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
+Begin with:
 
-**Windows (PowerShell):**
+#### **Notebook 1 — elon_tesla_modeling.ipynb**
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
+* Loads Tesla stock data
+* Loads Musk event timeline
+* Produces aligned time-series plots
 
+#### **Notebook 2 — arima.ipynb**
 
-## **3) Install Dependencies**
+* Performs ARIMA and auto-ARIMA forecasting
+* Tests for stationarity
+* Outputs forecast visualizations
 
-If the repo contains a `requirements.txt`:
+#### **Notebook 3 — musktimeline.ipynb**
 
-```bash
-pip install -r requirements.txt
-```
+* Parses, cleans, and formats Musk event data
+* Validates dates and event classifications
 
-Otherwise, install the minimum required packages:
-
-```bash
-pip install pandas matplotlib seaborn beautifulsoup4 lxml requests jupyter
-```
+Open each notebook and run **Kernel → Restart & Run All** to regenerate all outputs.
 
 
-## **4) Verify Project Structure**
+## **Notes on Reproducibility**
 
-Your working directory should contain:
-
-```
-Data/   Scripts/   Output/   LICENSE.md   README.md
-```
-
-Ensure that `Data/elon_musk_timeline.csv` exists.
-
-
-## **5) Run the Analysis Notebook**
-
-### **Option A — Jupyter Notebook (local, interactive)**
-
-```bash
-jupyter notebook
-```
-
-Then open:
-
-`Scripts/elon_tesla_modeling.ipynb`
-→ Select **Kernel → Restart & Run All**
-
-All figures will automatically be written to `Output/`.
-
----
-
-### **Option B — Command Line (non-interactive, reproducible)**
-
-```bash
-jupyter nbconvert --execute \
-  --to notebook \
-  --output Output/elon_tesla_modeling.ipynb \
-  Scripts/arima.ipynb
-```
-
-This runs the notebook headlessly and saves an executed copy in `Output/`.
-
----
-
-### **Option C — Google Colab**
-
-1. Open the repo in Colab (Upload or "Open from GitHub").
-2. Ensure the working directory includes the `Data/` folder.
-3. Run all cells normally.
-
-
-## **6) Expected Outputs**
-
-If the analysis runs successfully, `Output/` will contain:
-
-* `teslastock.png`
-* `teslastockelon.png`
-* `TSLAEvent.png`
-* (plus the executed notebook if using nbconvert)
-
-Existing files will be overwritten.
-
-
-## **7) Re-Running From a Clean Slate (optional)**
-
-**macOS / Linux:**
-
-```bash
-rm -f Output/*.png Output/elon_tesla_modeling.ipynb
-```
-
-**Windows (PowerShell):**
-
-```powershell
-Remove-Item Output\*.png, Output\elon_tesla_modeling.ipynb -ErrorAction Ignore
-```
-
-
-## **8) Troubleshooting Guide**
-
-| Issue                           | Fix                                                         |
-| ------------------------------- | ----------------------------------------------------------- |
-| **FileNotFoundError (CSV)**     | Verify you're in the repo root and `Data/` exists.          |
-| **Missing package ImportError** | Re-run dependency installation (Step 3).                    |
-| **Plots not saving**            | Ensure "Restart & Run All" was executed; verify save paths. |
-| **Colab path errors**           | Clone repo into `/content` or mount Google Drive.           |
-| **Matplotlib not displaying**   | Add `%matplotlib inline` near the top of the notebook.      |
-
+* All outputs are saved automatically into the `Output/` directory.
+* Relative paths are already configured, so the notebooks will run correctly as long as the repository folder structure is preserved.
+* For Colab users, ensure the repository is either uploaded or cloned into `/content/`.
 
