@@ -54,15 +54,13 @@ The analysis was executed on **both macOS and Windows** machines.
 * **musktimeline.ipynb**
   Notebook focused on processing, cleaning, and analyzing the Elon Musk event dataset.
 
-### **Output Folder**
 
-Generated visualizations, including:
+### **Hook Document***
 
-* `teslastock.png` — Tesla closing price over time
-* `teslastockelon.png` — Tesla stock overlaid with Elon Musk event markers
-* `TSLAEvent.png` — Event-annotated timeline visualization
+A detailed overview of the project’s background and context, along with guidance on the deliverables required for this case study.
 
-These plots are overwritten each time the notebooks are run.
+### **Rubric**
+A structured document outlining the criteria used to assess whether the case study has been successfully reproduced.
 
 
 ### **LICENSE**
