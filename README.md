@@ -47,7 +47,10 @@ The analysis was executed on **both macOS and Windows** machines.
 
 * **elon_tesla_modeling.ipynb**
   Notebook used to merge event timelines with price history and generate final event-aligned figures.
-
+  
+* **musk_timeseries_p2.ipynb**
+  Performs preprocessing, feature preparation, and time-series forecasting visualizations for the Elon Musk event dataset.
+  
 * **musktimeline.ipynb**
   Notebook focused on processing, cleaning, and analyzing the Elon Musk event dataset.
 
