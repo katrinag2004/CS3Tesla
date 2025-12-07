@@ -55,7 +55,7 @@ The analysis was executed on **both macOS and Windows** machines.
   Notebook focused on processing, cleaning, and analyzing the Elon Musk event dataset.
 
 
-### **Hook Document***
+### **Hook Document**
 
 A detailed overview of the project’s background and context, along with guidance on the deliverables required for this case study.
 
