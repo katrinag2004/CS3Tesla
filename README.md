@@ -119,3 +119,10 @@ Open each notebook and run **Kernel → Restart & Run All** to regenerate all ou
 * Relative paths are already configured, so the notebooks will run correctly as long as the repository folder structure is preserved.
 * For Colab users, ensure the repository is either uploaded or cloned into `/content/`.
 
+## **References (Materials)**
+
+F. Wang, “Tesla Stock Trends: How Elon Musk Shapes Market Sentiment,” *Markets.com*, 08-Jun-2025. ([markets.com][1])
+
+Data Overload, “Understanding ARIMA Models: A Comprehensive Guide to Time Series Forecasting,” *Medium*, 17-Jun-2023. ([medium.com][2])
+
+
