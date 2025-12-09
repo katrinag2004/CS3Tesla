@@ -1,8 +1,3 @@
-
-# **TeslaDS: Time-Series Modeling of Tesla Stock & Elon Musk Event Timeline**
-
-Case study GitHub repository
-
 ## **Contents**
 
 This project analyzes the relationship between **Tesla’s historical stock price movements** and **major events involving Elon Musk**, using time-series modeling, ARIMA forecasting, and event visualization. All analysis was conducted using Python, and figures were generated directly from the CSV data included in this repository.
@@ -35,10 +30,6 @@ The analysis was executed on **both macOS and Windows** machines.
 
 * **elon_musk_timeline.csv**
   Contains manually curated timestamps of Musk-related events used to overlay on Tesla stock price movements.
-
-* **METADATA.md**
-  Details the structure and origin of all datasets used in the project.
-  
 
 ### **SCRIPTS Folder**
 
@@ -105,7 +96,13 @@ Begin with:
 * Tests for stationarity
 * Outputs forecast visualizations
 
-#### **Notebook 3 — musktimeline.ipynb**
+#### **Notebook 3 - musk_timeseries_p2.ipynb**
+
+* Performs preprocessing and feature preparation
+* Creates time-series forecasting visualizations for the Elon Musk event dataset.
+
+
+#### **Notebook 4 — musktimeline.ipynb**
 
 * Parses, cleans, and formats Musk event data
 * Validates dates and event classifications
